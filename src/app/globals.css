@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #101827;
+  --sidebar: #141d2b;
+  --card: #202b3b;
+  --elevated: #263347;
+  --primary: #3978f6;
+  --primary-foreground: #ffffff;
+  --aqua: #55c5e8;
+  --foreground: #f5f7fb;
+  --muted-foreground: #9aa9bc;
+  --success: #2fb47c;
+  --warning: #e3a33a;
+  --danger: #d0605e;
+  --border: rgba(255, 255, 255, 0.07);
+  --ring: #55c5e8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-card: var(--card);
+  --color-elevated: var(--elevated);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-aqua: var(--aqua);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body { background-color: #101827; color: #f5f7fb; }
+
+@layer base {
+  * { @apply border-border; }
+  html { color-scheme: dark; }
+  body { @apply bg-background text-foreground antialiased; font-variant-numeric: tabular-nums; }
+  h1, h2, h3 { font-family: var(--font-display-face), ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.015em; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-ring; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
